@@ -1,6 +1,6 @@
 export interface TaskData {
   name: string;
   description: string;
-  idDone: boolean;
+  isDone: boolean;
   createdBy: string;
 }

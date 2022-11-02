@@ -1,0 +1,5 @@
+<div class="task">
+    {{task! | displayTask}}
+
+    <button *ngIf="!task!.isDone" (click)="taskIsDone()">Kész</button>
+</div>

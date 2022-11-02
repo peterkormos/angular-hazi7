@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { TasksComponent } from './tasks.component';
 
+export const NewTaskPath = 'newTask';
+
 const routes: Routes = [
   {
     path: '',
     component : TasksComponent
   },
     {
-    path: 'newTask',
+    path: NewTaskPath,
     component : NewTaskComponent
   },
 

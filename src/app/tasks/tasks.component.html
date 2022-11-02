@@ -1,1 +1,19 @@
-<p>tasks works!</p>
+<div>
+  <button routerLink="newTask">Új feladat</button>
+  <button (click)="logout()">Kijelentkezés</button>
+</div>
+<p></p>
+
+<h2>Feladatok</h2>
+<div *ngIf="!hasTasks(false)">
+  Még nincs egy feladat sem felvéve...
+</div>
+<app-task *ngFor="let task of getTasks(false)" [task]="task">
+</app-task>
+
+<h2>Kész feladatok</h2>
+<div *ngIf="!hasTasks(true)">
+  Még nincs egy feladat sem felvéve...
+</div>
+<app-task *ngFor="let task of getTasks(true)" [task]="task">
+</app-task>

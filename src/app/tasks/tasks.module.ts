@@ -4,6 +4,8 @@ import { TasksComponent } from './tasks.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { DisplayTaskPipe } from './pipe/display-task.pipe';
 import { TasksRoutingModule } from './tasks-routing.module';
+import { FormsModule } from '@angular/forms';
+import { TaskComponent } from './task/task.component';
 
 
 
@@ -11,11 +13,13 @@ import { TasksRoutingModule } from './tasks-routing.module';
   declarations: [
     TasksComponent,
     NewTaskComponent,
-    DisplayTaskPipe
+    DisplayTaskPipe,
+    TaskComponent
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+    FormsModule
   ]
 })
 export class TasksModule { }

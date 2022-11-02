@@ -1,1 +1,6 @@
-<p>new-task works!</p>
+<input placeholder="Név" [(ngModel)]="name">
+<p></p>
+<input placeholder="Leírás" [(ngModel)]="description">
+<p></p>
+<button (click)="saveTask()">Létrehozás</button>
+<button (click)="backToTasks()">Vissza</button>
