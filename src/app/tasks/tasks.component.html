@@ -1,6 +1,6 @@
 <div>
   <button routerLink="newTask">Új feladat</button>
-  <button (click)="logout()">Kijelentkezés</button>
+  <button (click)="logout()">{{loginService.getUserName()}} - Kijelentkezés</button>
 </div>
 <p></p>
 
