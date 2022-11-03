@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TasksPath } from 'src/app/app-routing.module';
+import { RouterService } from '../router.service';
 import { TaskData } from '../task.data';
 import { TaskService } from '../task.service';
-import { TasksComponent } from '../tasks.component';
 
 @Component({
   selector: 'app-task',
@@ -13,7 +11,7 @@ import { TasksComponent } from '../tasks.component';
 export class TaskComponent implements OnInit {
   @Input() task: TaskData | undefined;
 
-  constructor(readonly router: Router, readonly taskService: TaskService) { }
+  constructor(readonly routerService: RouterService, readonly taskService: TaskService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +22,6 @@ export class TaskComponent implements OnInit {
   }
 
   backToTasks() {
-    this.router.navigateByUrl(TasksPath);
+    this.routerService.toTasksPage();
   }
 }

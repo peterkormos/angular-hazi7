@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TasksPath } from 'src/app/app-routing.module';
 import { LoginService } from 'src/app/login/login.service';
+import { RouterService } from '../router.service';
 import { TaskService } from '../task.service';
-import { TasksComponent } from '../tasks.component';
 
 @Component({
   selector: 'app-new-task',
@@ -14,7 +12,7 @@ export class NewTaskComponent implements OnInit {
   name: string | undefined;
   description: string | undefined;
 
-  constructor(readonly router: Router, readonly taskService: TaskService, readonly loginService: LoginService) { }
+  constructor(readonly routerService: RouterService, readonly taskService: TaskService, readonly loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +30,7 @@ export class NewTaskComponent implements OnInit {
   }
 
   backToTasks() {
-    this.router.navigateByUrl(TasksPath);
+    this.routerService.toTasksPage();
   }
 
 }

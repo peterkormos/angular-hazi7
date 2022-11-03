@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TasksPath } from '../app-routing.module';
+import { RouterService } from '../tasks/router.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
   userName: string | undefined;
 
-  constructor(readonly loginService: LoginService, readonly router: Router) {}
+  constructor(readonly loginService: LoginService, readonly routerService: RouterService) {}
 
   ngOnInit(): void {
     this.userName = this.loginService.getUserName();
@@ -19,6 +18,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginService.login(this.userName!);
-    this.router.navigateByUrl(TasksPath);
+    this.routerService.toTasksPage();
   }
 }
